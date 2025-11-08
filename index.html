@@ -1,0 +1,66 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Whisper to Sheets</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.4.0/docx.umd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Whisper to Sheets</h1>
+      <p class="subtitle">Speak your data, we’ll write your sheet</p>
+    </header>
+
+    <section class="controls">
+      <button id="micBtn" class="mic-btn">🎙️ Start Listening</button>
+      <input id="manualInput" type="text" placeholder="2025-11-08 - A101 - Rice - 1200" />
+      <button id="addBtn" class="add-btn">Add Entry</button>
+      <input id="filterInput" type="text" placeholder="Filter by Flat Number (e.g. A101)" />
+      <button id="clearFilter" class="clear-btn">Clear Filter</button>
+    </section>
+
+    <section class="tables">
+      <h2>Main Table</h2>
+      <table id="mainTable">
+        <thead>
+          <tr><th>Date</th><th>Flat</th><th>Item</th><th>Amount</th><th>Action</th></tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr><td colspan="3">Total:</td><td id="grandTotal">0</td><td></td></tr>
+        </tfoot>
+      </table>
+
+      <h3>Per Flat Totals</h3>
+      <div id="flatTotals"></div>
+
+      <h2>Filtered Table</h2>
+      <table id="filteredTable">
+        <thead>
+          <tr><th>Date</th><th>Flat</th><th>Item</th><th>Amount</th><th>Action</th></tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr><td colspan="3">Filtered Total:</td><td id="filteredTotal">0</td><td></td></tr>
+        </tfoot>
+      </table>
+
+      <div class="export-buttons">
+        <button id="exportMain">Export Main Table (.docx)</button>
+        <button id="exportFiltered">Export Filtered Table (.docx)</button>
+      </div>
+    </section>
+
+    <footer>
+      <p> Whisper to Sheets</p>
+    </footer>
+  </div>
+
+  <script type="module" src="script.cjs"></script>
+</body>
+</html>
