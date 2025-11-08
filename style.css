@@ -1,0 +1,110 @@
+ :root {
+  --bg: #f8faff;
+  --accent: #4a90e2;
+  --text: #1a1a1a;
+  --light: #f0f4ff;
+  --border: #e0e6f0;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.subtitle {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+input {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  flex: 1;
+  min-width: 180px;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#mainTable, #filteredTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  background: var(--light);
+  text-align: left;
+}
+
+tr:hover {
+  background: #fafcff;
+}
+
+tfoot td {
+  font-weight: bold;
+}
+
+.export-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 20px;
+}
